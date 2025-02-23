@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
-const API_KEY = "e7868432a1924b8ab759671808e395a5";
+const port = process.env.PORT || 3000; // Default to 3000 if not specified
+const API_KEY = process.env.NEWS_API_KEY;
 const COUNTRY = "us";
 
 app.use(cors()); // Fix CORS issue
